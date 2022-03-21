@@ -9,13 +9,13 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UserModel implements UserDetails {
+public class UserPrinciple implements UserDetails {
 
     private String username;
     private String password;
     private List<GrantedAuthority> authorities;
 
-    public UserModel(UserDAO u) {
+    public UserPrinciple(UserDAO u) {
         this.username = u.getUsername();
         this.password = u.getPassword();
         this.authorities = Arrays.stream(u.getRoles().split(","))
