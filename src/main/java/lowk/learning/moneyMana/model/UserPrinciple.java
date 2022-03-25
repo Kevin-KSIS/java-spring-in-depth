@@ -15,7 +15,7 @@ public class UserPrinciple implements UserDetails {
     private String password;
     private List<GrantedAuthority> authorities;
 
-    public UserPrinciple(UserDAO u) {
+    public UserPrinciple(User u) {
         this.username = u.getUsername();
         this.password = u.getPassword();
         this.authorities = Arrays.stream(u.getRoles().split(","))
